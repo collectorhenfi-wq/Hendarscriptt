@@ -1,0 +1,546 @@
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local UserInputService = game:GetService("UserInputService")
+
+local player = Players.LocalPlayer
+
+----------------------------------------------------------
+-- GUI PERTAMA (NEXT + COPY) - muncul langsung
+----------------------------------------------------------
+
+local introGui = Instance.new("ScreenGui", player.PlayerGui)
+introGui.Name = "IntroGUI"
+introGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+local introFrame = Instance.new("Frame", introGui)
+introFrame.Size = UDim2.new(0, 320, 0, 200)
+introFrame.Position = UDim2.new(0.5, -160, 0.5, -100)
+introFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+introFrame.BorderSizePixel = 0
+introFrame.ZIndex = 20
+
+local ic = Instance.new("UICorner", introFrame)
+ic.CornerRadius = UDim.new(0, 10)
+
+local introTitle = Instance.new("TextLabel", introFrame)
+introTitle.Size = UDim2.new(1, 0, 0, 40)
+introTitle.Position = UDim2.new(0, 0, 0, 10)
+introTitle.Text = "Script by Mozil"
+introTitle.BackgroundTransparency = 1
+introTitle.Font = Enum.Font.GothamBold
+introTitle.TextSize = 16
+introTitle.TextColor3 = Color3.fromRGB(0, 170, 255)
+introTitle.ZIndex = 21
+
+-- COPY DISCORD BUTTON
+local copyDiscordBtn = Instance.new("TextButton", introFrame)
+copyDiscordBtn.Size = UDim2.new(0, 280, 0, 35)
+copyDiscordBtn.Position = UDim2.new(0.1, 0, 0.35, 0)
+copyDiscordBtn.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+copyDiscordBtn.Text = "Copy Discord"
+copyDiscordBtn.TextColor3 = Color3.new(1,1,1)
+copyDiscordBtn.Font = Enum.Font.GothamBold
+copyDiscordBtn.TextSize = 14
+copyDiscordBtn.ZIndex = 21
+
+Instance.new("UICorner", copyDiscordBtn).CornerRadius = UDim.new(0, 8)
+
+copyDiscordBtn.MouseButton1Click:Connect(function()
+    setclipboard("https://discord.gg/TkbhZSCx7A")
+    copyDiscordBtn.Text = "Copied Discord!"
+    task.wait(1)
+    copyDiscordBtn.Text = "Copy Discord"
+end)
+
+-- COPY COMMUNITY ROBLOX BUTTON
+local copyCommunityBtn = Instance.new("TextButton", introFrame)
+copyCommunityBtn.Size = UDim2.new(0, 280, 0, 35)
+copyCommunityBtn.Position = UDim2.new(0.1, 0, 0.55, 0)
+copyCommunityBtn.BackgroundColor3 = Color3.fromRGB(255, 100, 0)
+copyCommunityBtn.Text = "Copy Community Roblox"
+copyCommunityBtn.TextColor3 = Color3.new(1,1,1)
+copyCommunityBtn.Font = Enum.Font.GothamBold
+copyCommunityBtn.TextSize = 14
+copyCommunityBtn.ZIndex = 21
+
+Instance.new("UICorner", copyCommunityBtn).CornerRadius = UDim.new(0, 8)
+
+copyCommunityBtn.MouseButton1Click:Connect(function()
+    setclipboard("https://www.roblox.com/share/g/1044363377")
+    copyCommunityBtn.Text = "Copied Community Roblox!"
+    task.wait(1)
+    copyCommunityBtn.Text = "Copy Community Roblox"
+end)
+
+-- NEXT BUTTON
+local nextBtn = Instance.new("TextButton", introFrame)
+nextBtn.Size = UDim2.new(0, 280, 0, 35)
+nextBtn.Position = UDim2.new(0.1, 0, 0.75, 0)
+nextBtn.BackgroundColor3 = Color3.fromRGB(0, 255, 120)
+nextBtn.Text = "NEXT"
+nextBtn.TextColor3 = Color3.new(1,1,1)
+nextBtn.Font = Enum.Font.GothamBold
+nextBtn.TextSize = 16
+nextBtn.ZIndex = 21
+
+Instance.new("UICorner", nextBtn).CornerRadius = UDim.new(0, 8)
+
+----------------------------------------------------------
+-- GUI LOADING SCREEN (muncul setelah NEXT ditekan)
+----------------------------------------------------------
+
+local loadingScreenGui = Instance.new("ScreenGui")
+loadingScreenGui.Name = "LoadingScreenGUI"
+loadingScreenGui.IgnoreGuiInset = true
+loadingScreenGui.ResetOnSpawn = false
+
+-- Background gradient yang sangat bagus dengan efek partikel
+local loadingBackground = Instance.new("Frame")
+loadingBackground.Size = UDim2.new(1, 0, 1, 0)
+loadingBackground.Position = UDim2.new(0, 0, 0, 0)
+loadingBackground.BackgroundColor3 = Color3.new(0.05, 0.05, 0.1)
+loadingBackground.BorderSizePixel = 0
+loadingBackground.ZIndex = 30
+
+-- Gradient effect premium
+local gradient = Instance.new("UIGradient")
+gradient.Rotation = 45
+gradient.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.new(0.08, 0.05, 0.15)),
+    ColorSequenceKeypoint.new(0.3, Color3.new(0.12, 0.08, 0.25)),
+    ColorSequenceKeypoint.new(0.6, Color3.new(0.15, 0.1, 0.3)),
+    ColorSequenceKeypoint.new(1, Color3.new(0.08, 0.05, 0.15))
+})
+gradient.Transparency = NumberSequence.new(0)
+gradient.Parent = loadingBackground
+
+-- Efek partikel bintang
+local function createStars()
+    for i = 1, 20 do
+        local star = Instance.new("Frame")
+        star.Size = UDim2.new(0, math.random(2, 4), 0, math.random(2, 4))
+        star.Position = UDim2.new(
+            math.random(0, 100) / 100,
+            0,
+            math.random(0, 100) / 100,
+            0
+        )
+        star.BackgroundColor3 = Color3.new(1, 1, 1)
+        star.BackgroundTransparency = math.random(5, 8) / 10
+        star.BorderSizePixel = 0
+        star.ZIndex = 29
+        
+        -- Animasi twinkle
+        coroutine.wrap(function()
+            while true do
+                local targetTrans = math.random(5, 9) / 10
+                local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut)
+                local tween = TweenService:Create(star, tweenInfo, {BackgroundTransparency = targetTrans})
+                tween:Play()
+                task.wait(math.random(2, 4))
+            end
+        end)()
+        
+        star.Parent = loadingBackground
+    end
+end
+
+-- Container untuk loading elements
+local loadingContainer = Instance.new("Frame")
+loadingContainer.Size = UDim2.new(0, 500, 0, 220)
+loadingContainer.Position = UDim2.new(0.5, -250, 0.5, -110)
+loadingContainer.BackgroundColor3 = Color3.fromRGB(25, 25, 35)
+loadingContainer.BackgroundTransparency = 0.1
+loadingContainer.BorderSizePixel = 0
+loadingContainer.ZIndex = 31
+
+local containerCorner = Instance.new("UICorner")
+containerCorner.CornerRadius = UDim.new(0, 20)
+containerCorner.Parent = loadingContainer
+
+local containerStroke = Instance.new("UIStroke")
+containerStroke.Color = Color3.fromRGB(100, 100, 200)
+containerStroke.Thickness = 3
+containerStroke.Transparency = 0.5
+containerStroke.Parent = loadingContainer
+
+-- Inner glow effect
+local innerGlow = Instance.new("Frame")
+innerGlow.Size = UDim2.new(1, 0, 1, 0)
+innerGlow.BackgroundTransparency = 1
+innerGlow.BorderSizePixel = 0
+innerGlow.ZIndex = 30
+
+local innerGlowStroke = Instance.new("UIStroke")
+innerGlowStroke.Color = Color3.fromRGB(150, 150, 255)
+innerGlowStroke.Thickness = 2
+innerGlowStroke.Transparency = 0.7
+innerGlowStroke.Parent = innerGlow
+
+innerGlow.Parent = loadingContainer
+
+loadingContainer.Parent = loadingBackground
+
+-- Teks "Don't worry your base will be locked automatically" di atas progress bar
+local loadingText = Instance.new("TextLabel")
+loadingText.Size = UDim2.new(0.9, 0, 0, 50)
+loadingText.Position = UDim2.new(0.05, 0, 0, 10)
+loadingText.BackgroundTransparency = 1
+loadingText.Text = "Don't worry your base will be locked automatically"
+loadingText.Font = Enum.Font.GothamBold
+loadingText.TextSize = 18
+loadingText.TextColor3 = Color3.new(1, 1, 1)
+loadingText.TextWrapped = true
+loadingText.ZIndex = 32
+loadingText.Parent = loadingContainer
+
+-- Persentase loading dengan warna warni
+local percentLabel = Instance.new("TextLabel")
+percentLabel.Size = UDim2.new(1, 0, 0, 40)
+percentLabel.Position = UDim2.new(0, 0, 0, 60)
+percentLabel.BackgroundTransparency = 1
+percentLabel.Text = "0%"
+percentLabel.Font = Enum.Font.GothamBlack
+percentLabel.TextSize = 24
+percentLabel.TextColor3 = Color3.new(1, 1, 1)
+percentLabel.ZIndex = 32
+percentLabel.Parent = loadingContainer
+
+-- Background progress bar yang lebih bagus
+local progressBackground = Instance.new("Frame")
+progressBackground.Size = UDim2.new(0.9, 0, 0, 30)
+progressBackground.Position = UDim2.new(0.05, 0, 0, 110)
+progressBackground.BackgroundColor3 = Color3.fromRGB(40, 40, 60)
+progressBackground.BorderSizePixel = 0
+progressBackground.ZIndex = 32
+progressBackground.Parent = loadingContainer
+
+local progressBackgroundCorner = Instance.new("UICorner")
+progressBackgroundCorner.CornerRadius = UDim.new(0, 15)
+progressBackgroundCorner.Parent = progressBackground
+
+local progressBackgroundStroke = Instance.new("UIStroke")
+progressBackgroundStroke.Color = Color3.fromRGB(100, 100, 180)
+progressBackgroundStroke.Thickness = 2
+progressBackgroundStroke.Parent = progressBackground
+
+-- Progress fill dengan gradient warna warni
+local progressFill = Instance.new("Frame")
+progressFill.Size = UDim2.new(0, 0, 1, 0)
+progressFill.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+progressFill.BorderSizePixel = 0
+progressFill.ZIndex = 33
+progressFill.Parent = progressBackground
+
+local progressFillCorner = Instance.new("UICorner")
+progressFillCorner.CornerRadius = UDim.new(0, 15)
+progressFillCorner.Parent = progressFill
+
+-- Gradient untuk progress fill
+local progressGradient = Instance.new("UIGradient")
+progressGradient.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 50, 50)),
+    ColorSequenceKeypoint.new(0.3, Color3.fromRGB(255, 150, 50)),
+    ColorSequenceKeypoint.new(0.6, Color3.fromRGB(255, 255, 50)),
+    ColorSequenceKeypoint.new(0.8, Color3.fromRGB(100, 255, 100)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(50, 255, 50))
+})
+progressGradient.Parent = progressFill
+
+-- Teks "LOADING..." dengan animasi titik
+local loadingDotsText = Instance.new("TextLabel")
+loadingDotsText.Size = UDim2.new(1, 0, 0, 25)
+loadingDotsText.Position = UDim2.new(0, 0, 0, 150)
+loadingDotsText.BackgroundTransparency = 1
+loadingDotsText.Text = "LOADING..."
+loadingDotsText.Font = Enum.Font.Gotham
+loadingDotsText.TextSize = 16
+loadingDotsText.TextColor3 = Color3.new(0.8, 0.8, 1)
+loadingDotsText.ZIndex = 32
+loadingDotsText.Parent = loadingContainer
+
+-- Teks "BY HENDAR AND BY MOZIL" di bawah loading dots
+local loadingByText = Instance.new("TextLabel")
+loadingByText.Size = UDim2.new(1, 0, 0, 20)
+loadingByText.Position = UDim2.new(0, 0, 0, 180)
+loadingByText.BackgroundTransparency = 1
+loadingByText.Text = "BY HENDAR AND BY MOZIL"
+loadingByText.Font = Enum.Font.Gotham
+loadingByText.TextSize = 12
+loadingByText.TextColor3 = Color3.new(0.6, 0.6, 0.8)
+loadingByText.ZIndex = 32
+loadingByText.Parent = loadingContainer
+
+-- Tombol "Want play mini game?"
+local miniGameBtn = Instance.new("TextButton")
+miniGameBtn.Size = UDim2.new(0, 220, 0, 40)
+miniGameBtn.Position = UDim2.new(0.5, -110, 0.9, 0)
+miniGameBtn.BackgroundColor3 = Color3.fromRGB(120, 80, 220)
+miniGameBtn.Text = "Want play mini game?"
+miniGameBtn.TextColor3 = Color3.new(1, 1, 1)
+miniGameBtn.Font = Enum.Font.GothamBold
+miniGameBtn.TextSize = 14
+miniGameBtn.ZIndex = 32
+miniGameBtn.Visible = false -- Awalnya tidak terlihat
+
+local miniGameBtnCorner = Instance.new("UICorner")
+miniGameBtnCorner.CornerRadius = UDim.new(0, 10)
+miniGameBtnCorner.Parent = miniGameBtn
+
+local miniGameBtnStroke = Instance.new("UIStroke")
+miniGameBtnStroke.Color = Color3.fromRGB(180, 150, 255)
+miniGameBtnStroke.Thickness = 2
+miniGameBtnStroke.Parent = miniGameBtn
+
+miniGameBtn.Parent = loadingBackground
+
+----------------------------------------------------------
+-- MINI GAME FRAME
+----------------------------------------------------------
+
+local miniGameFrame = Instance.new("Frame")
+miniGameFrame.Size = UDim2.new(0, 400, 0, 250)
+miniGameFrame.Position = UDim2.new(0.5, -200, 0.5, -125)
+miniGameFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 50)
+miniGameFrame.BackgroundTransparency = 0.1
+miniGameFrame.BorderSizePixel = 0
+miniGameFrame.ZIndex = 40
+miniGameFrame.Visible = false
+
+local miniGameCorner = Instance.new("UICorner")
+miniGameCorner.CornerRadius = UDim.new(0, 20)
+miniGameCorner.Parent = miniGameFrame
+
+local miniGameStroke = Instance.new("UIStroke")
+miniGameStroke.Color = Color3.fromRGB(120, 100, 220)
+miniGameStroke.Thickness = 3
+miniGameStroke.Parent = miniGameFrame
+
+-- Tombol close (X)
+local closeBtn = Instance.new("TextButton")
+closeBtn.Size = UDim2.new(0, 35, 0, 35)
+closeBtn.Position = UDim2.new(1, -40, 0, 10)
+closeBtn.BackgroundColor3 = Color3.fromRGB(220, 80, 80)
+closeBtn.Text = "X"
+closeBtn.TextColor3 = Color3.new(1, 1, 1)
+closeBtn.Font = Enum.Font.GothamBold
+closeBtn.TextSize = 18
+closeBtn.ZIndex = 41
+
+local closeBtnCorner = Instance.new("UICorner")
+closeBtnCorner.CornerRadius = UDim.new(0, 17)
+closeBtnCorner.Parent = closeBtn
+
+local closeBtnStroke = Instance.new("UIStroke")
+closeBtnStroke.Color = Color3.fromRGB(255, 120, 120)
+closeBtnStroke.Thickness = 2
+closeBtnStroke.Parent = closeBtn
+
+closeBtn.Parent = miniGameFrame
+
+-- Title mini game
+local miniGameTitle = Instance.new("TextLabel")
+miniGameTitle.Size = UDim2.new(1, 0, 0, 50)
+miniGameTitle.Position = UDim2.new(0, 0, 0, 10)
+miniGameTitle.BackgroundTransparency = 1
+miniGameTitle.Text = "CLICK THE BUTTONS!"
+miniGameTitle.Font = Enum.Font.GothamBold
+miniGameTitle.TextSize = 20
+miniGameTitle.TextColor3 = Color3.new(1, 1, 1)
+miniGameTitle.ZIndex = 41
+miniGameTitle.Parent = miniGameFrame
+
+----------------------------------------------------------
+-- SISTEM LOADING DENGAN PERUBAHAN WARNA MERAH KE HIJAU
+----------------------------------------------------------
+
+local function startLoading()
+    local currentPercent = 0
+    local dotStates = {"LOADING", "LOADING.", "LOADING..", "LOADING..."}
+    local dotIndex = 1
+    
+    -- Buat efek bintang
+    createStars()
+    
+    -- Tampilkan tombol mini game setelah beberapa persen
+    miniGameBtn.Visible = true
+    
+    -- Animasi titik loading
+    local dotsCoroutine = coroutine.create(function()
+        while currentPercent < 100 do
+            dotIndex = dotIndex + 1
+            if dotIndex > #dotStates then
+                dotIndex = 1
+            end
+            loadingDotsText.Text = dotStates[dotIndex]
+            task.wait(0.5)
+        end
+    end)
+    coroutine.resume(dotsCoroutine)
+    
+    -- Animasi warna persentase
+    local percentColorCoroutine = coroutine.create(function()
+        local hue = 0
+        while currentPercent < 100 do
+            hue = (hue + 0.02) % 1
+            percentLabel.TextColor3 = Color3.fromHSV(hue, 0.8, 1)
+            task.wait(0.1)
+        end
+    end)
+    coroutine.resume(percentColorCoroutine)
+    
+    while currentPercent < 100 do
+        
+        local delayTime = 1
+        if currentPercent < 30 then delayTime = 4
+        elseif currentPercent < 40 then delayTime = 3
+        elseif currentPercent < 50 then delayTime = 5
+        elseif currentPercent < 60 then delayTime = 2
+        elseif currentPercent < 70 then delayTime = 6
+        elseif currentPercent < 80 then delayTime = 4
+        elseif currentPercent < 90 then delayTime = 7
+        elseif currentPercent < 99 then delayTime = 5
+        elseif currentPercent >= 99 then delayTime = 30
+        end
+        
+        currentPercent += 1
+        
+        percentLabel.Text = currentPercent .. "%"
+        progressFill.Size = UDim2.new(currentPercent / 100, 0, 1, 0)
+        
+        task.wait(delayTime)
+    end
+    
+    loadingText.Text = "Complete!"
+    percentLabel.Text = "100%"
+    percentLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+    progressFill.Size = UDim2.new(1, 0, 1, 0)
+    loadingDotsText.Text = "READY!"
+    miniGameBtn.Visible = false
+    
+    task.wait(1)
+    loadingScreenGui:Destroy()
+    -- Jalankan script kamu
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MoziIOnTop/hmmm/refs/heads/main/Visual1"))()
+end
+
+----------------------------------------------------------
+-- MINI GAME SYSTEM
+----------------------------------------------------------
+
+local function createClickButton()
+    local clickBtn = Instance.new("TextButton")
+    clickBtn.Size = UDim2.new(0, 60, 0, 60)
+    clickBtn.Position = UDim2.new(
+        math.random(5, 85) / 100,
+        -30,
+        math.random(25, 75) / 100,
+        -30
+    )
+    
+    -- Warna random yang menarik
+    local colors = {
+        Color3.fromRGB(255, 100, 100),
+        Color3.fromRGB(100, 200, 255),
+        Color3.fromRGB(150, 255, 150),
+        Color3.fromRGB(255, 200, 100),
+        Color3.fromRGB(200, 150, 255),
+        Color3.fromRGB(100, 255, 255)
+    }
+    local randomColor = colors[math.random(1, #colors)]
+    
+    clickBtn.BackgroundColor3 = randomColor
+    clickBtn.Text = "Click Me"
+    clickBtn.TextColor3 = Color3.new(0, 0, 0)
+    clickBtn.Font = Enum.Font.GothamBold
+    clickBtn.TextSize = 12
+    clickBtn.ZIndex = 41
+    
+    local btnCorner = Instance.new("UICorner")
+    btnCorner.CornerRadius = UDim.new(1, 0)
+    btnCorner.Parent = clickBtn
+    
+    local btnStroke = Instance.new("UIStroke")
+    btnStroke.Color = Color3.new(1, 1, 1)
+    btnStroke.Thickness = 2
+    btnStroke.Parent = clickBtn
+    
+    -- Efek hover
+    clickBtn.MouseEnter:Connect(function()
+        clickBtn.Size = UDim2.new(0, 65, 0, 65)
+        clickBtn.Position = UDim2.new(
+            clickBtn.Position.X.Scale,
+            -32.5,
+            clickBtn.Position.Y.Scale,
+            -32.5
+        )
+    end)
+    
+    clickBtn.MouseLeave:Connect(function()
+        clickBtn.Size = UDim2.new(0, 60, 0, 60)
+        clickBtn.Position = UDim2.new(
+            clickBtn.Position.X.Scale,
+            -30,
+            clickBtn.Position.Y.Scale,
+            -30
+        )
+    end)
+    
+    clickBtn.MouseButton1Click:Connect(function()
+        -- Efek klik
+        local tweenInfo = TweenInfo.new(0.2, Enum.EasingStyle.Back, Enum.EasingDirection.In)
+        local tween = TweenService:Create(clickBtn, tweenInfo, {Size = UDim2.new(0, 0, 0, 0)})
+        tween:Play()
+        
+        tween.Completed:Connect(function()
+            clickBtn:Destroy()
+            -- Buat tombol baru setelah 0.5 detik
+            task.wait(0.5)
+            if miniGameFrame.Visible then
+                createClickButton()
+            end
+        end)
+    end)
+    
+    clickBtn.Parent = miniGameFrame
+end
+
+local function createMiniGame()
+    -- Hapus tombol lama jika ada
+    for _, child in ipairs(miniGameFrame:GetChildren()) do
+        if child:IsA("TextButton") and child ~= closeBtn then
+            child:Destroy()
+        end
+    end
+    
+    -- Buat 5 tombol random
+    for i = 1, 5 do
+        createClickButton()
+        task.wait(0.1) -- Sedikit delay agar tidak overlap
+    end
+end
+
+----------------------------------------------------------
+-- EVENT HANDLERS
+----------------------------------------------------------
+
+-- Tombol mini game
+miniGameBtn.MouseButton1Click:Connect(function()
+    miniGameFrame.Visible = true
+    miniGameFrame.Parent = loadingBackground
+    createMiniGame()
+end)
+
+-- Tombol close mini game
+closeBtn.MouseButton1Click:Connect(function()
+    miniGameFrame.Visible = false
+end)
+
+-- Saat NEXT ditekan
+nextBtn.MouseButton1Click:Connect(function()
+    introGui:Destroy() -- hapus GUI dengan tombol
+    loadingScreenGui.Parent = player.PlayerGui
+    loadingBackground.Parent = loadingScreenGui
+    miniGameFrame.Parent = loadingBackground
+    startLoading()
+end)
