@@ -1,0 +1,450 @@
+-- Ultimate Premium Loading Screen - UPDATED VERSION
+local Player = game:GetService("Players").LocalPlayer
+local PlayerGui = Player:WaitForChild("PlayerGui")
+local TweenService = game:GetService("TweenService")
+
+-- Create Main ScreenGui
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "UltimatePremiumLoader"
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+ScreenGui.Parent = PlayerGui
+
+-- Enhanced Visual Effects
+local lighting = game:GetService("Lighting")
+local BlurEffect = Instance.new("BlurEffect")
+BlurEffect.Size = 25
+BlurEffect.Parent = lighting
+
+local ColorCorrection = Instance.new("ColorCorrectionEffect")
+ColorCorrection.Brightness = 0.1
+ColorCorrection.Contrast = 0.18
+ColorCorrection.Saturation = -0.12
+ColorCorrection.TintColor = Color3.fromRGB(255, 235, 235)
+ColorCorrection.Parent = lighting
+
+-- Ultimate Main Container
+local MainContainer = Instance.new("Frame")
+MainContainer.Size = UDim2.new(0, 500, 0, 220)
+MainContainer.Position = UDim2.new(0.5, -250, 0.5, -110)
+MainContainer.BackgroundColor3 = Color3.fromRGB(15, 15, 22)
+MainContainer.BackgroundTransparency = 0.04
+MainContainer.BorderSizePixel = 0
+MainContainer.ZIndex = 10
+MainContainer.Parent = ScreenGui
+
+-- Ultra Glass Effect
+local GlassLayer = Instance.new("Frame")
+GlassLayer.Size = UDim2.new(1, 0, 1, 0)
+GlassLayer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GlassLayer.BackgroundTransparency = 0.97
+GlassLayer.BorderSizePixel = 0
+GlassLayer.ZIndex = 9
+GlassLayer.Parent = MainContainer
+
+-- Premium Corner Radius
+local MainCorner = Instance.new("UICorner")
+MainCorner.CornerRadius = UDim.new(0, 24)
+MainCorner.Parent = MainContainer
+
+-- Animated Border Glow
+local BorderGlow = Instance.new("ImageLabel")
+BorderGlow.Size = UDim2.new(1, 50, 1, 50)
+BorderGlow.Position = UDim2.new(0, -25, 0, -25)
+BorderGlow.BackgroundTransparency = 1
+BorderGlow.Image = "rbxassetid://8992230672"
+BorderGlow.ImageColor3 = Color3.fromRGB(255, 40, 40)
+BorderGlow.ScaleType = Enum.ScaleType.Slice
+BorderGlow.SliceCenter = Rect.new(20, 20, 280, 280)
+BorderGlow.ImageTransparency = 0.88
+BorderGlow.ZIndex = 8
+BorderGlow.Parent = MainContainer
+
+-- Content Container
+local ContentFrame = Instance.new("Frame")
+ContentFrame.Size = UDim2.new(1, -60, 1, -60)
+ContentFrame.Position = UDim2.new(0, 30, 0, 30)
+ContentFrame.BackgroundTransparency = 1
+ContentFrame.ZIndex = 11
+ContentFrame.Parent = MainContainer
+
+-- Left Side - Premium Logo
+local LeftSide = Instance.new("Frame")
+LeftSide.Size = UDim2.new(0, 100, 1, 0)
+LeftSide.BackgroundTransparency = 1
+LeftSide.Parent = ContentFrame
+
+-- Ultimate Logo Container
+local LogoContainer = Instance.new("Frame")
+LogoContainer.Size = UDim2.new(0, 80, 0, 80)
+LogoContainer.Position = UDim2.new(0.5, -40, 0.5, -40)
+LogoContainer.BackgroundColor3 = Color3.fromRGB(10, 10, 16)
+LogoContainer.BorderSizePixel = 0
+LogoContainer.ZIndex = 12
+LogoContainer.Parent = LeftSide
+
+local LogoCorner = Instance.new("UICorner")
+LogoCorner.CornerRadius = UDim.new(0, 18)
+LogoCorner.Parent = LogoContainer
+
+-- Animated Logo Border
+local LogoBorder = Instance.new("UIStroke")
+LogoBorder.Color = Color3.fromRGB(255, 50, 50)
+LogoBorder.Thickness = 2.5
+LogoBorder.Transparency = 0.4
+LogoBorder.Parent = LogoContainer
+
+-- Premium Logo Image
+local LogoImage = Instance.new("ImageLabel")
+LogoImage.Size = UDim2.new(0.65, 0, 0.65, 0)
+LogoImage.Position = UDim2.new(0.175, 0, 0.175, 0)
+LogoImage.BackgroundTransparency = 1
+LogoImage.Image = "rbxassetid://130074633930311"
+LogoImage.ImageColor3 = Color3.fromRGB(255, 255, 255)
+LogoImage.ScaleType = Enum.ScaleType.Fit
+LogoImage.ZIndex = 13
+LogoImage.Parent = LogoContainer
+
+-- Logo Glow Effect
+local LogoGlow = Instance.new("ImageLabel")
+LogoGlow.Size = UDim2.new(1, 25, 1, 25)
+LogoGlow.Position = UDim2.new(0, -12.5, 0, -12.5)
+LogoGlow.BackgroundTransparency = 1
+LogoGlow.Image = "rbxassetid://8992230672"
+LogoGlow.ImageColor3 = Color3.fromRGB(255, 40, 40)
+LogoGlow.ScaleType = Enum.ScaleType.Slice
+LogoGlow.SliceCenter = Rect.new(20, 20, 280, 280)
+LogoGlow.ImageTransparency = 0.78
+LogoGlow.ZIndex = 11
+LogoGlow.Parent = LogoContainer
+
+-- Right Side - Ultimate Content
+local RightSide = Instance.new("Frame")
+RightSide.Size = UDim2.new(0, 340, 1, 0)
+RightSide.Position = UDim2.new(0, 120, 0, 0)
+RightSide.BackgroundTransparency = 1
+RightSide.ZIndex = 11
+RightSide.Parent = ContentFrame
+
+-- Ultimate Main Title
+local MainTitle = Instance.new("TextLabel")
+MainTitle.Size = UDim2.new(1, 0, 0, 50)
+MainTitle.Position = UDim2.new(0, 0, 0, 10)
+MainTitle.BackgroundTransparency = 1
+MainTitle.Text = "YOUTUBE:HENDARSCRIPT"
+MainTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+MainTitle.TextScaled = false
+MainTitle.TextSize = 22
+MainTitle.TextXAlignment = Enum.TextXAlignment.Left
+MainTitle.Font = Enum.Font.GothamBlack
+MainTitle.TextStrokeTransparency = 0.6
+MainTitle.TextStrokeColor3 = Color3.fromRGB(255, 45, 45)
+MainTitle.ZIndex = 12
+MainTitle.Parent = RightSide
+
+-- Ultimate Progress Container
+local ProgressContainer = Instance.new("Frame")
+ProgressContainer.Size = UDim2.new(1, 0, 0, 60)
+ProgressContainer.Position = UDim2.new(0, 0, 0, 70)
+ProgressContainer.BackgroundTransparency = 1
+ProgressContainer.ZIndex = 11
+ProgressContainer.Parent = RightSide
+
+-- Progress Text
+local ProgressText = Instance.new("TextLabel")
+ProgressText.Size = UDim2.new(1, 0, 0, 24)
+ProgressText.Position = UDim2.new(0, 0, 0, 0)
+ProgressText.BackgroundTransparency = 1
+ProgressText.Text = "🚀 INITIALIZING SYSTEMS..."
+ProgressText.TextColor3 = Color3.fromRGB(220, 220, 255)
+ProgressText.TextXAlignment = Enum.TextXAlignment.Left
+ProgressText.Font = Enum.Font.GothamBold
+ProgressText.TextSize = 14
+ProgressText.ZIndex = 12
+ProgressText.Parent = ProgressContainer
+
+-- Ultimate Progress Bar Background
+local ProgressBackground = Instance.new("Frame")
+ProgressBackground.Size = UDim2.new(1, 0, 0, 12)
+ProgressBackground.Position = UDim2.new(0, 0, 0, 30)
+ProgressBackground.BackgroundColor3 = Color3.fromRGB(35, 35, 48)
+ProgressBackground.BorderSizePixel = 0
+ProgressBackground.ZIndex = 11
+ProgressBackground.Parent = ProgressContainer
+
+local ProgressBgCorner = Instance.new("UICorner")
+ProgressBgCorner.CornerRadius = UDim.new(1, 0)
+ProgressBgCorner.Parent = ProgressBackground
+
+-- Ultimate Progress Bar Fill
+local ProgressFill = Instance.new("Frame")
+ProgressFill.Size = UDim2.new(0, 0, 1, 0)
+ProgressFill.BackgroundColor3 = Color3.fromRGB(255, 50, 50)
+ProgressFill.BorderSizePixel = 0
+ProgressFill.ZIndex = 12
+ProgressFill.Parent = ProgressBackground
+
+local ProgressFillCorner = Instance.new("UICorner")
+ProgressFillCorner.CornerRadius = UDim.new(1, 0)
+ProgressFillCorner.Parent = ProgressFill
+
+-- Ultimate Gradient Effect
+local ProgressGradient = Instance.new("UIGradient")
+ProgressGradient.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 115, 115)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(255, 70, 70)),
+    ColorSequenceKeypoint.new(0.7, Color3.fromRGB(255, 50, 50)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(220, 35, 35))
+})
+ProgressGradient.Parent = ProgressFill
+
+-- Progress Bar Glow
+local ProgressGlow = Instance.new("ImageLabel")
+ProgressGlow.Size = UDim2.new(1, 25, 3.5, 0)
+ProgressGlow.Position = UDim2.new(0, -12.5, -1.25, 0)
+ProgressGlow.BackgroundTransparency = 1
+ProgressGlow.Image = "rbxassetid://8992230672"
+ProgressGlow.ImageColor3 = Color3.fromRGB(255, 40, 40)
+ProgressGlow.ScaleType = Enum.ScaleType.Slice
+ProgressGlow.SliceCenter = Rect.new(20, 20, 280, 280)
+ProgressGlow.ImageTransparency = 0.72
+ProgressGlow.ZIndex = 11
+ProgressGlow.Parent = ProgressFill
+
+-- Status Container
+local StatusContainer = Instance.new("Frame")
+StatusContainer.Size = UDim2.new(1, 0, 0, 50)
+StatusContainer.Position = UDim2.new(0, 0, 0, 140)
+StatusContainer.BackgroundTransparency = 1
+StatusContainer.ZIndex = 11
+StatusContainer.Parent = RightSide
+
+-- Status Text
+local StatusText = Instance.new("TextLabel")
+StatusText.Size = UDim2.new(1, 0, 1, 0)
+StatusText.BackgroundTransparency = 1
+StatusText.Text = "⚡ Preparing ultimate experience..."
+StatusText.TextColor3 = Color3.fromRGB(170, 170, 215)
+StatusText.TextXAlignment = Enum.TextXAlignment.Left
+StatusText.Font = Enum.Font.Gotham
+StatusText.TextSize = 13
+StatusText.TextWrapped = true
+StatusText.ZIndex = 12
+StatusText.Parent = StatusContainer
+
+-- Countdown Text
+local CountdownText = Instance.new("TextLabel")
+CountdownText.Size = UDim2.new(1, 0, 0, 20)
+CountdownText.Position = UDim2.new(0, 0, 0, 190)
+CountdownText.BackgroundTransparency = 1
+CountdownText.Text = ""
+CountdownText.TextColor3 = Color3.fromRGB(255, 255, 100)
+CountdownText.TextXAlignment = Enum.TextXAlignment.Left
+CountdownText.Font = Enum.Font.GothamBold
+CountdownText.TextSize = 14
+CountdownText.ZIndex = 12
+CountdownText.Visible = false
+CountdownText.Parent = RightSide
+
+-- Version Text
+local VersionText = Instance.new("TextLabel")
+VersionText.Size = UDim2.new(1, 0, 0, 16)
+VersionText.Position = UDim2.new(0, 0, 1, -20)
+VersionText.BackgroundTransparency = 1
+VersionText.Text = "v3.0 SCRIPTSPAWNER$ | © 2025 HENDARSCRIPT"
+VersionText.TextColor3 = Color3.fromRGB(140, 140, 190)
+VersionText.TextXAlignment = Enum.TextXAlignment.Right
+VersionText.Font = Enum.Font.Gotham
+VersionText.TextSize = 10
+VersionText.ZIndex = 12
+VersionText.Parent = ContentFrame
+
+-- Animated Border Glow System
+local function animateUltimateBorderGlow()
+    while BorderGlow and BorderGlow.Parent do
+        local tween1 = TweenService:Create(
+            BorderGlow,
+            TweenInfo.new(2.2, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut),
+            {
+                ImageTransparency = 0.7,
+                ImageColor3 = Color3.fromRGB(255, 60, 60)
+            }
+        )
+        tween1:Play()
+        wait(2.2)
+        
+        local tween2 = TweenService:Create(
+            BorderGlow,
+            TweenInfo.new(2.2, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut),
+            {
+                ImageTransparency = 0.9,
+                ImageColor3 = Color3.fromRGB(255, 35, 35)
+            }
+        )
+        tween2:Play()
+        wait(2.2)
+    end
+end
+
+-- Ultimate Status Update
+local function updateUltimateStatus(text, icon)
+    if StatusText then
+        StatusText.Text = icon .. " " .. text
+        local pulse = TweenService:Create(
+            StatusText,
+            TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+            {
+                TextColor3 = Color3.fromRGB(255, 255, 255),
+                TextSize = 14
+            }
+        )
+        pulse:Play()
+        
+        delay(1, function()
+            if StatusText then
+                local reset = TweenService:Create(
+                    StatusText,
+                    TweenInfo.new(0.6, Enum.EasingStyle.Sine),
+                    {
+                        TextColor3 = Color3.fromRGB(170, 170, 215),
+                        TextSize = 13
+                    }
+                )
+                reset:Play()
+            end
+        end)
+    end
+end
+
+-- Ultimate Progress Update
+local function updateUltimateProgress(text, icon)
+    if ProgressText then
+        ProgressText.Text = icon .. " " .. text
+        local bounce = TweenService:Create(
+            ProgressText,
+            TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out),
+            {
+                TextColor3 = Color3.fromRGB(255, 255, 255),
+                TextSize = 15
+            }
+        )
+        bounce:Play()
+        
+        delay(0.8, function()
+            if ProgressText then
+                local reset = TweenService:Create(
+                    ProgressText,
+                    TweenInfo.new(0.4, Enum.EasingStyle.Sine),
+                    {
+                        TextColor3 = Color3.fromRGB(220, 220, 255),
+                        TextSize = 14
+                    }
+                )
+                reset:Play()
+            end
+        end)
+    end
+end
+
+-- Main Loading Sequence - UPDATED
+local function executeUltimateLoading()
+    -- Start animation systems
+    spawn(animateUltimateBorderGlow)
+    
+    -- Progressive loading from 3% to 100% with 3 second delay between each percent
+    for percent = 3, 100 do
+        local progress = percent / 100
+        local tween = TweenService:Create(
+            ProgressFill,
+            TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+            {Size = UDim2.new(progress, 0, 1, 0)}
+        )
+        tween:Play()
+        
+        -- Update progress text
+        updateUltimateProgress(percent .. "% - LOADING...", "📊")
+        
+        if percent <= 20 then
+            updateUltimateStatus("Initializing core systems...", "🔧")
+        elseif percent <= 50 then
+            updateUltimateStatus("Loading dependencies...", "📦")
+        elseif percent <= 80 then
+            updateUltimateStatus("Optimizing performance...", "⚙️")
+        else
+            updateUltimateStatus("Finalizing setup...", "✨")
+        end
+        
+        wait(5) -- 3 second delay between each percent
+    end
+    
+    -- When reaching 100%, show "Please wait 30 seconds" message
+    updateUltimateProgress("100% - COMPLETE!", "✅")
+    updateUltimateStatus("Please wait 30 seconds...", "⏳")
+    
+    -- Show countdown message
+    CountdownText.Visible = true
+    CountdownText.Text = "⏰ Please wait 30 seconds..."
+    
+    -- Wait for 30 seconds
+    wait(30)
+    
+    CountdownText.Visible = false
+    
+    -- Final effects
+    if MainTitle then
+        MainTitle.Text = "ULTIMATE READY!"
+        local titleTween = TweenService:Create(
+            MainTitle,
+            TweenInfo.new(0.9, Enum.EasingStyle.Elastic, Enum.EasingDirection.Out),
+            {
+                TextColor3 = Color3.fromRGB(255, 230, 100),
+                TextStrokeColor3 = Color3.fromRGB(255, 100, 50),
+                TextSize = 24
+            }
+        )
+        titleTween:Play()
+    end
+    
+    -- Ultimate glow effects
+    local successGlow = TweenService:Create(
+        BorderGlow,
+        TweenInfo.new(1.2, Enum.EasingStyle.Elastic, Enum.EasingDirection.Out),
+        {
+            ImageTransparency = 0.4,
+            ImageColor3 = Color3.fromRGB(255, 80, 80)
+        }
+    )
+    successGlow:Play()
+    
+    wait(2)
+    
+    -- ULTIMATE EXIT ANIMATION
+    local exitTween = TweenService:Create(
+        MainContainer,
+        TweenInfo.new(1.2, Enum.EasingStyle.Quint, Enum.EasingDirection.Out),
+        {BackgroundTransparency = 1}
+    )
+    exitTween:Play()
+    
+    wait(1.2)
+    
+    -- PROFESSIONAL CLEANUP
+    pcall(function()
+        BlurEffect:Destroy()
+        ColorCorrection:Destroy()
+    end)
+    
+    -- REMOVE LOADING SCREEN
+    if ScreenGui then
+        ScreenGui:Destroy()
+    end
+end
+
+-- LAUNCH ULTIMATE PERFECTION
+local success, err = pcall(executeUltimateLoading)
+if not success then
+    warn("Ultimate loading experience: " .. tostring(err))
+    if ScreenGui then
+        ScreenGui:Destroy()
+    end
+end
