@@ -1,0 +1,641 @@
+-- This script was generated using the MoonVeil Obfuscator v1.4.5 [https://moonveil.cc]
+
+local ia,Md,cd=(string.char),(string.byte),(bit32 .bxor)
+return(function(ma,...)
+    local function jg(i_)
+        return ma[i_+(12939- -14049)]
+    end
+    local Pe=loadstring(game[(function(Wb,Hb)
+        local ld=''
+        for ud=172,(#Wb-1)+172 do
+            ld=ld..ia(cd(Md(Wb,(ud-172)+1),Md(Hb,(ud-172)%#Hb+1)))
+        end
+        return ld
+    end)('\142\210\201\182\225\216\178','\198\166\189')](game,jg(-0.36001889243121976*-8469)))()
+    local Qa,kf,jd=Pe[(function(Ba,pe)
+        local pd=''
+        for wf=98,(#Ba-1)+98 do
+            pd=pd..ia(cd(Md(Ba,(wf-98)+1),Md(pe,(wf-98)%#pe+1)))
+        end
+        return pd
+    end)('\191\f\137#I\217\171\23\130&R\203','\252~\236B=\188')](Pe,jg(-786.81818181818187*66)),game[(function(wb,gd)
+        local qb=''
+        for Rf=85,(#wb-1)+85 do
+            qb=qb..ia(cd(Md(wb,(Rf-85)+1),Md(gd,(Rf-85)%#gd+1)))
+        end
+        return qb
+    end)('\213\222*\195B\224\205\55\243B',"\146\187^\144\'")](game,(function(Nd,Y)
+        local tc=''
+        for If=134,(#Nd-1)+134 do
+            tc=tc..ia(cd(Md(Nd,(If-134)+1),Md(Y,(If-134)%#Y+1)))
+        end
+        return tc
+    end)('\199\193\"\238\200\49\228','\151\173C')),game[(function(oe,Vc)
+        local Le=''
+        for je=44,(#oe-1)+44 do
+            Le=Le..ia(cd(Md(oe,(je-44)+1),Md(Vc,(je-44)%#Vc+1)))
+        end
+        return Le
+    end)('-\209f\252t\24\194{\204t','j\180\18\175\17')](game,jg(-57530- -20083))
+    local Bb=kf[(function(Pd,Pf)
+        local Uc=''
+        for Za=119,(#Pd-1)+119 do
+            Uc=Uc..ia(cd(Md(Pd,(Za-119)+1),Md(Pf,(Za-119)%#Pf+1)))
+        end
+        return Uc
+    end)('\158\142\2\211\162\130\141\0\203\171\160','\210\225a\178\206')]
+    local E=require(Bb[(function(mf,zb)
+        local ce=''
+        for Ra=25,(#mf-1)+25 do
+            ce=ce..ia(cd(Md(mf,(Ra-25)+1),Md(zb,(Ra-25)%#zb+1)))
+        end
+        return ce
+    end)('\136h\218\139<\186\139g\201\155)\188\171','\216\4\187\242Y\200')][(function(Zc,na)
+        local C=''
+        for Sf=43,(#Zc-1)+43 do
+            C=C..ia(cd(Md(Zc,(Sf-43)+1),Md(na,(Sf-43)%#na+1)))
+        end
+        return C
+    end)('\220U\237\183U\240V\239\166U\236',"\159:\131\195\'")][(function(Gc,I)
+        local Ie=''
+        for Ee=56,(#Gc-1)+56 do
+            Ie=Ie..ia(cd(Md(Gc,(Ee-56)+1),Md(I,(Ee-56)%#I+1)))
+        end
+        return Ie
+    end)('[U\134\17.\131BV\130\22)\146','\1:\235sG\230')])[(function(Ea,ka)
+        local _f=''
+        for Mb=130,(#Ea-1)+130 do
+            _f=_f..ia(cd(Md(Ea,(Mb-130)+1),Md(ka,(Mb-130)%#ka+1)))
+        end
+        return _f
+    end)('\196\189g\252\187o\237','\158\210\n')]
+    if type(E)~=(function(y,mb)
+        local xd=''
+        for Be=181,(#y-1)+181 do
+            xd=xd..ia(cd(Md(y,(Be-181)+1),Md(mb,(Be-181)%#mb+1)))
+        end
+        return xd
+    end)('\"t4y3','V\21')then
+        for Zb,Ab in pairs(getgc(true))do
+            if not(type(Ab)==jg(-3.5000682966807815*14642)and rawget(Ab,jg(-1.9565509676962813*28263))and rawget(Ab,(function(v,Fe)
+                local we=''
+                for u_=7,(#v-1)+7 do
+                    we=we..ia(cd(Md(v,(u_-7)+1),Md(Fe,(u_-7)%#Fe+1)))
+                end
+                return we
+            end)('\196n~\144\133\b\211nw\151\128\30','\158\1\19\242\236m')))then
+            else
+                E=Ab[(function(T,Ke)
+                    local ta=''
+                    for _g=179,(#T-1)+179 do
+                        ta=ta..ia(cd(Md(T,(_g-179)+1),Md(Ke,(_g-179)%#Ke+1)))
+                    end
+                    return ta
+                end)('_\240\254g\246\246v','\5\159\147')]
+                break
+            end
+        end
+    end
+    local ad,Kf,cc,F,Pc,Ce,B,vb,l_=jd[(function(gc,Zf)
+        local g=''
+        for qe=97,(#gc-1)+97 do
+            g=g..ia(cd(Md(gc,(qe-97)+1),Md(Zf,(qe-97)%#Zf+1)))
+        end
+        return g
+    end)('\184\136\4\rN\19\157\170\5\16d\24','\239\233my\b|')](jd,(function(eg,Wc)
+        local q=''
+        for Wd=199,(#eg-1)+199 do
+            q=q..ia(cd(Md(eg,(Wd-199)+1),Md(Wc,(Wd-199)%#Wc+1)))
+        end
+        return q
+    end)('j\191\175\29Z\151b\181\175\16G\151C','0\208\194\127\51\242'))[(function(Xd,D)
+        local M=''
+        for We=41,(#Xd-1)+41 do
+            M=M..ia(cd(Md(Xd,(We-41)+1),Md(D,(We-41)%#D+1)))
+        end
+        return M
+    end)('\134\164\230As\220\163\134\231\\Y\215','\209\197\143\53\53\179')](jd[(function(lf,ge)
+        local qf=''
+        for he=241,(#lf-1)+241 do
+            qf=qf..ia(cd(Md(lf,(he-241)+1),Md(ge,(he-241)%#ge+1)))
+        end
+        return qf
+    end)('\184\136\4\rN\19\157\170\5\16d\24','\239\233my\b|')](jd,(function(bc,mg)
+        local kc=''
+        for Se=113,(#bc-1)+113 do
+            kc=kc..ia(cd(Md(bc,(Se-113)+1),Md(mg,(Se-113)%#mg+1)))
+        end
+        return kc
+    end)('j\191\175\29Z\151b\181\175\16G\151C','0\208\194\127\51\242')),jg(-24276-30783)),jg(-272+-21248),jg(-25861+-396),jg(0.51407826183349958*-18042),0,require(jd[(function(H,Mc)
+        local hg=''
+        for z=113,(#H-1)+113 do
+            hg=hg..ia(cd(Md(H,(z-113)+1),Md(Mc,(z-113)%#Mc+1)))
+        end
+        return hg
+    end)('\188\248\221\222\244\237\153\218\220\195\222\230','\235\153\180\170\178\130')](jd,jg(-34030+9711))[(function(uf,ee)
+        local sa=''
+        for bd=254,(#uf-1)+254 do
+            sa=sa..ia(cd(Md(uf,(bd-254)+1),Md(ee,(bd-254)%#ee+1)))
+        end
+        return sa
+    end)('\239\252\140\245L\186\202\222\141\232f\177','\184\157\229\129\n\213')](jd[(function(sc,Ha)
+        local He=''
+        for Vf=43,(#sc-1)+43 do
+            He=He..ia(cd(Md(sc,(Vf-43)+1),Md(Ha,(Vf-43)%#Ha+1)))
+        end
+        return He
+    end)('\188\248\221\222\244\237\153\218\220\195\222\230','\235\153\180\170\178\130')](jd,jg(-34030+9711)),(function(if_,cg)
+        local nd=''
+        for gb=195,(#if_-1)+195 do
+            nd=nd..ia(cd(Md(if_,(gb-195)+1),Md(cg,(gb-195)%#cg+1)))
+        end
+        return nd
+    end)('\129\2\195i\185\135\27\200a\164\163','\196t\166\a\205'))),jg(2618-19027),225375/9015,jg(621298780/-27238)
+    if not(Ce and Ce[(function(wd,fa_)
+        local Dc=''
+        for pb=223,(#wd-1)+223 do
+            Dc=Dc..ia(cd(Md(wd,(pb-223)+1),Md(fa_,(pb-223)%#fa_+1)))
+        end
+        return Dc
+    end)('a\227f\128E\246c\130','&\130\n\225')])then
+    else
+        B=Ce[(function(tb,Gd)
+            local Te=''
+            for Yf=86,(#tb-1)+86 do
+                Te=Te..ia(cd(Md(tb,(Yf-86)+1),Md(Gd,(Yf-86)%#Gd+1)))
+            end
+            return Te
+        end)('\179\52*i\151!/k','\244UF\b')][(function(O,za)
+            local yf=''
+            for Id=21,(#O-1)+21 do
+                yf=yf..ia(cd(Md(O,(Id-21)+1),Md(za,(Id-21)%#za+1)))
+            end
+            return yf
+        end)('nY\nY\202\48\212\234JO\nr\236\51\217\255','/,~6\137_\184\134')];
+        vb=Ce[(function(rd,Hd)
+            local ec=''
+            for ef=107,(#rd-1)+107 do
+                ec=ec..ia(cd(Md(rd,(ef-107)+1),Md(Hd,(ef-107)%#Hd+1)))
+            end
+            return ec
+        end)('*\20#\231\14\1&\229','muO\134')][(function(hb,n_)
+            local wa=''
+            for lc=195,(#hb-1)+195 do
+                wa=wa..ia(cd(Md(hb,(lc-195)+1),Md(n_,(lc-195)%#n_+1)))
+            end
+            return wa
+        end)('\201l\143}-L\254Q\130u!Z\249','\138\3\227\17H/')];
+        l_=Ce[(function(id,bg)
+            local Va=''
+            for f_=138,(#id-1)+138 do
+                Va=Va..ia(cd(Md(id,(f_-138)+1),Md(bg,(f_-138)%#bg+1)))
+            end
+            return Va
+        end)('\189\238]\2\153\251X\0','\250\143\49c')][(function(wc,Sd)
+            local Jd=''
+            for rc=235,(#wc-1)+235 do
+                Jd=Jd..ia(cd(Md(wc,(rc-235)+1),Md(Sd,(rc-235)%#Sd+1)))
+            end
+            return Jd
+        end)('\245\164A\184\172=\221\214\183C\185\176?\247','\163\197\"\205\217P\153')]
+    end
+    local function Kd()
+        local uc=Bb[(function(Ec,vc)
+            local td=''
+            for Ub=233,(#Ec-1)+233 do
+                td=td..ia(cd(Md(Ec,(Ub-233)+1),Md(vc,(Ub-233)%#vc+1)))
+            end
+            return td
+        end)('\31 \25F=+\fQ.','\\Hx4')]
+        if not(uc)then
+        else
+            return uc[(function(Xf,ue)
+                local af=''
+                for Jb=80,(#Xf-1)+80 do
+                    af=af..ia(cd(Md(Xf,(Jb-80)+1),Md(ue,(Jb-80)%#ue+1)))
+                end
+                return af
+            end)('\148\30y\150\210>\238b\227E\186\30{\150\219\49\223}\246u\161','\210w\23\242\148W\156\17\151\6')](uc,(function(fb,Bc)
+                local jc=''
+                for Fd=174,(#fb-1)+174 do
+                    jc=jc..ia(cd(Md(fb,(Fd-174)+1),Md(Bc,(Fd-174)%#Bc+1)))
+                end
+                return jc
+            end)('\220Y\153\251\250C\157\254','\148,\244\154'))
+        end
+        return nil
+    end
+    local function Da()
+        return(function(Qc)
+            local function Ob(ng)
+                return Qc[ng- -98205613/-3007]
+            end
+            local xe=Kd()
+            if not(xe)then
+            else
+                if not(Pc==Ob(-2.4110813226094727*-23499))then
+                else
+                    Pc=xe[(function(Cf,ze)
+                        local le=''
+                        for Ya=22,(#Cf-1)+22 do
+                            le=le..ia(cd(Md(Cf,(Ya-22)+1),Md(ze,(Ya-22)%#ze+1)))
+                        end
+                        return le
+                    end)('2\137\229\129\31\137\242\161\14','z\224\149\201')]
+                end
+                xe[(function(Nb,m)
+                    local Xa=''
+                    for yc=227,(#Nb-1)+227 do
+                        Xa=Xa..ia(cd(Md(Nb,(yc-227)+1),Md(m,(yc-227)%#m+1)))
+                    end
+                    return Xa
+                end)('D\t\225/i\t\246\15x','\f\96\145g')]=Ob(69057-12161)
+            end
+        end){[-0.79371888917998423*-30536]=-91350/-3654,[28302+-4303]=0}
+    end
+    local function Ia()
+        local mc=Kd()
+        if mc then
+            mc[(function(Ff,tf)
+                local yb=''
+                for ff=232,(#Ff-1)+232 do
+                    yb=yb..ia(cd(Md(Ff,(ff-232)+1),Md(tf,(ff-232)%#tf+1)))
+                end
+                return yb
+            end)('\"\178\131Q\15\178\148q\30','j\219\243\25')]=Pc
+        end
+    end
+    Qa[(function(ea,Jc)
+        local _e=''
+        for Sc=142,(#ea-1)+142 do
+            _e=_e..ia(cd(Md(ea,(Sc-142)+1),Md(Jc,(Sc-142)%#Jc+1)))
+        end
+        return _e
+    end)('\253\26Q\167\211\25R\159\217','\188~5\243')](Qa,{[jg(-30983- -6699)]=jg(-269606623/9871),[jg(-79089+20246)]=function(eb)
+        Kf=eb
+        if eb then
+            task[(function(df,Rb)
+                local Xb=''
+                for Xe=107,(#df-1)+107 do
+                    Xb=Xb..ia(cd(Md(df,(Xe-107)+1),Md(Rb,(Xe-107)%#Rb+1)))
+                end
+                return Xb
+            end)('S\144A\151N',' \224')](function()
+                return(function(Rd)
+                    local function da(cb)
+                        return Rd[cb+(-1501+-8053)]
+                    end
+                    while Kf do
+                        Da();
+                        task[(function(Lb,xc)
+                            local S=''
+                            for xf=191,(#Lb-1)+191 do
+                                S=S..ia(cd(Md(Lb,(xf-191)+1),Md(xc,(xf-191)%#xc+1)))
+                            end
+                            return S
+                        end)('\178\155\172\142','\197\250')](da(25785- -9502))
+                    end
+                end){[-23236899/-903]=3721.2000000000003/18606}
+            end)
+        else
+            Ia()
+        end
+    end});
+    Bb[(function(rf,Ge)
+        local nf=''
+        for Je=39,(#rf-1)+39 do
+            nf=nf..ia(cd(Md(rf,(Je-39)+1),Md(Ge,(Je-39)%#Ge+1)))
+        end
+        return nf
+    end)('8\155e[\199\239[\30\129EM\194\233K','{\243\4)\166\140/')][(function(Re,dc)
+        local d_=''
+        for od=218,(#Re-1)+218 do
+            d_=d_..ia(cd(Md(Re,(od-218)+1),Md(dc,(od-218)%#dc+1)))
+        end
+        return d_
+    end)('x=\bU7\5O',';Rf')](Bb[(function(se_,Od)
+        local Xc=''
+        for Cd=145,(#se_-1)+145 do
+            Xc=Xc..ia(cd(Md(se_,(Cd-145)+1),Md(Od,(Cd-145)%#Od+1)))
+        end
+        return Xc
+    end)('8\155e[\199\239[\30\129EM\194\233K','{\243\4)\166\140/')],function()
+        task[(function(Kc,_b)
+            local cf=''
+            for Ne=53,(#Kc-1)+53 do
+                cf=cf..ia(cd(Md(Kc,(Ne-53)+1),Md(_b,(Ne-53)%#_b+1)))
+            end
+            return cf
+        end)('\29\243\3\230','j\146')](-0.0002042483660130719*-4896)
+        if Kf then
+            Da()
+        else
+            Ia()
+        end
+    end);
+    Qa[(function(k,ba)
+        local ye=''
+        for Ja=158,(#k-1)+158 do
+            ye=ye..ia(cd(Md(k,(Ja-158)+1),Md(ba,(Ja-158)%#ba+1)))
+        end
+        return ye
+    end)('\255S\1\158\209P\2\166\219','\190\55e\202')](Qa,{[jg(1.1322751322751323*756)]=jg(-0.3734661212875689*16869),[jg(-3220550/3142)]=function(de)
+        cc=de;
+        task[(function(o_,Cb)
+            local Ae=''
+            for Yd=253,(#o_-1)+253 do
+                Ae=Ae..ia(cd(Md(o_,(Yd-253)+1),Md(Cb,(Yd-253)%#Cb+1)))
+            end
+            return Ae
+        end)('\224\213\242\210\253','\147\165')](function()
+            return(function(Dd)
+                local function og(_a)
+                    return Dd[_a+-327848095/-11215]
+                end
+                while cc do
+                    for Fa,Df in pairs(E)do
+                        if not(Df and not Df[(function(pf,Ue)
+                            local jb=''
+                            for Vb=127,(#pf-1)+127 do
+                                jb=jb..ia(cd(Md(pf,(Vb-127)+1),Md(Ue,(Vb-127)%#Ue+1)))
+                            end
+                            return jb
+                        end)('\241\241\148\193\235\190\223','\184\130\208')]and Df[(function(X,K)
+                            local kd=''
+                            for V=243,(#X-1)+243 do
+                                kd=kd..ia(cd(Md(X,(V-243)+1),Md(K,(V-243)%#K+1)))
+                            end
+                            return kd
+                        end)('%\3\155\1\18\146','mf\250')]>0)then
+                        else
+                            ad[(function(hf,Ld)
+                                local Me=''
+                                for fe=157,(#hf-1)+157 do
+                                    Me=Me..ia(cd(Md(hf,(fe-157)+1),Md(Ld,(fe-157)%#Ld+1)))
+                                end
+                                return Me
+                            end)('\0O(\213\165#T,\213\132','F&Z\176\246')](ad,Fa,math[(function(lb,Ib)
+                                local Na=''
+                                for oa=105,(#lb-1)+105 do
+                                    Na=Na..ia(cd(Md(lb,(oa-105)+1),Md(Ib,(oa-105)%#Ib+1)))
+                                end
+                                return Na
+                            end)('@iOy','(\28')])
+                        end
+                    end
+                    task[(function(jf,s_)
+                        local rg=''
+                        for j=120,(#jf-1)+120 do
+                            rg=rg..ia(cd(Md(jf,(j-120)+1),Md(s_,(j-120)%#s_+1)))
+                        end
+                        return rg
+                    end)('\212\199\202\210','\163\166')](og(6105+-7117))
+                end
+            end){[-2652774/-94]=7.3252023587151601e-06*27303}
+        end)
+    end});
+    Qa[(function(Of,Ed)
+        local w_=''
+        for dd=249,(#Of-1)+249 do
+            w_=w_..ia(cd(Md(Of,(dd-249)+1),Md(Ed,(dd-249)%#Ed+1)))
+        end
+        return w_
+    end)('\218\161cG\244\162\96\127\254','\155\197\a\19')](Qa,{[jg(-248088786/16179)]=(function(Ma,aa)
+        local be=''
+        for t_=137,(#Ma-1)+137 do
+            be=be..ia(cd(Md(Ma,(t_-137)+1),Md(aa,(t_-137)%#aa+1)))
+        end
+        return be
+    end)("o\200\227\141\196\r!\135\190\177\127D\ni\220\251\131\135:\'\136\242\145jUDZ",'.\189\151\226\228NN\235\210\212\28\48*'),[(function(fc,ja)
+        local kb=''
+        for ib=28,(#fc-1)+28 do
+            kb=kb..ia(cd(Md(fc,(ib-28)+1),Md(ja,(ib-28)%#ja+1)))
+        end
+        return kb
+    end)('\170\181\170\133\171\181\165\130','\201\212\198\233')]=function(pa)
+        return(function(Hc)
+            local function Yb(G)
+                return Hc[G-50603676/1893]
+            end
+            F=pa
+            if not(Ce and Ce[(function(qg,pg)
+                local Pa=''
+                for x=135,(#qg-1)+135 do
+                    Pa=Pa..ia(cd(Md(qg,(x-135)+1),Md(pg,(x-135)%#pg+1)))
+                end
+                return Pa
+            end)('\6X\6\212\"M\3\214','A9j\181')])then
+            else
+                if pa then
+                    Ce[(function(r_,ic)
+                        local ke=''
+                        for nb=42,(#r_-1)+42 do
+                            ke=ke..ia(cd(Md(r_,(nb-42)+1),Md(ic,(nb-42)%#ic+1)))
+                        end
+                        return ke
+                    end)(']\185\184\228y\172\189\230','\26\216\212\133')][(function(Wa,Pb)
+                        local h=''
+                        for te=34,(#Wa-1)+34 do
+                            h=h..ia(cd(Md(Wa,(te-34)+1),Md(Pb,(te-34)%#Pb+1)))
+                        end
+                        return h
+                    end)('\96\23A\148\148T\220\30D\1A\191\178W\209\v','!b5\251\215;\176r')]=0;
+                    Ce[(function(Tf,ed)
+                        local ca=''
+                        for Eb=36,(#Tf-1)+36 do
+                            ca=ca..ia(cd(Md(Tf,(Eb-36)+1),Md(ed,(Eb-36)%#ed+1)))
+                        end
+                        return ca
+                    end)('4\195Q\170\16\214T\168','s\162=\203')][(function(L,ab)
+                        local U=''
+                        for qd=33,(#L-1)+33 do
+                            U=U..ia(cd(Md(L,(qd-33)+1),Md(ab,(qd-33)%#ab+1)))
+                        end
+                        return U
+                    end)('\153\158\216\162x\214\174\163\213\170t\192\169','\218\241\180\206\29\181')]=math[(function(bf,Lf)
+                        local Jf=''
+                        for Ac=178,(#bf-1)+178 do
+                            Jf=Jf..ia(cd(Md(bf,(Ac-178)+1),Md(Lf,(Ac-178)%#Lf+1)))
+                        end
+                        return Jf
+                    end)('\236y\227i','\132\f')];
+                    Ce[(function(hd,Aa)
+                        local zd=''
+                        for ga=26,(#hd-1)+26 do
+                            zd=zd..ia(cd(Md(hd,(ga-26)+1),Md(Aa,(ga-26)%#Aa+1)))
+                        end
+                        return zd
+                    end)('\t\162\250\180-\183\255\182','N\195\150\213')][(function(Oc,ag)
+                        local zf=''
+                        for hc=231,(#Oc-1)+231 do
+                            zf=zf..ia(cd(Md(Oc,(hc-231)+1),Md(ag,(hc-231)%#ag+1)))
+                        end
+                        return zf
+                    end)('\157L\239{\161\187\148\190_\237z\189\185\190','\203-\140\14\212\214\208')]=Yb(30353+27997)
+                else
+                    Ce[(function(Ef,md)
+                        local db=''
+                        for xb=118,(#Ef-1)+118 do
+                            db=db..ia(cd(Md(Ef,(xb-118)+1),Md(md,(xb-118)%#md+1)))
+                        end
+                        return db
+                    end)('c\226\226\196G\247\231\198','$\131\142\165')][(function(Nc,_c)
+                        local me=''
+                        for la=174,(#Nc-1)+174 do
+                            me=me..ia(cd(Md(Nc,(la-174)+1),Md(_c,(la-174)%#_c+1)))
+                        end
+                        return me
+                    end)('\243\v\171\26Y\140b\191\215\29\171\49\127\143o\170','\178~\223u\26\227\14\211')]=B;
+                    Ce[(function(sg,pc)
+                        local b_=''
+                        for vd=170,(#sg-1)+170 do
+                            b_=b_..ia(cd(Md(sg,(vd-170)+1),Md(pc,(vd-170)%#pc+1)))
+                        end
+                        return b_
+                    end)('\159l\185\190\187y\188\188','\216\r\213\223')][(function(N,Fc)
+                        local Vd=''
+                        for Qf=26,(#N-1)+26 do
+                            Vd=Vd..ia(cd(Md(N,(Qf-26)+1),Md(Fc,(Qf-26)%#Fc+1)))
+                        end
+                        return Vd
+                    end)('\167?\140\222\130\253\144\2\129\214\142\235\151','\228P\224\178\231\158')]=vb;
+                    Ce[(function(sb,Ic)
+                        local Db=''
+                        for ig=210,(#sb-1)+210 do
+                            Db=Db..ia(cd(Md(sb,(ig-210)+1),Md(Ic,(ig-210)%#Ic+1)))
+                        end
+                        return Db
+                    end)('\163\232\172\144\135\253\169\146','\228\137\192\241')][(function(gf,Af)
+                        local ob=''
+                        for qa=228,(#gf-1)+228 do
+                            ob=ob..ia(cd(Md(gf,(qa-228)+1),Md(Af,(qa-228)%#Af+1)))
+                        end
+                        return ob
+                    end)('\194\174\208\241\147\215_\225\189\210\240\143\213u','\148\207\179\132\230\186\27')]=l_
+                end
+            end
+        end){[54516-22898]=-1562.25/-31245}
+    end});
+    Qa[(function(Wf,Ga)
+        local dg=''
+        for Gb=243,(#Wf-1)+243 do
+            dg=dg..ia(cd(Md(Wf,(Gb-243)+1),Md(Ga,(Gb-243)%#Ga+1)))
+        end
+        return dg
+    end)('\173\148$D\141\146%d','\236\240@\b')](Qa,{[jg(-308430456/16252)]=jg(-42651+-3358),[(function(re_,Zd)
+        local Gf=''
+        for of=83,(#re_-1)+83 do
+            Gf=Gf..ia(cd(Md(re_,(of-83)+1),Md(Zd,(of-83)%#Zd+1)))
+        end
+        return Gf
+    end)('\t\207\r\211','}\182')]=jg(-51584+6429)});
+    Pe[(function(Cc,Lc)
+        local Td=''
+        for Ve=135,(#Cc-1)+135 do
+            Td=Td..ia(cd(Md(Cc,(Ve-135)+1),Md(Lc,(Ve-135)%#Lc+1)))
+        end
+        return Td
+    end)('T(t2','\29F')](Pe)
+end)({[229024771/21649]=23204+-23203,[-6373+-25482]=(function(a_,Yc)
+    local Tb=''
+    for Fb=187,(#a_-1)+187 do
+        Tb=Tb..ia(cd(Md(a_,(Fb-187)+1),Md(Yc,(Fb-187)%#Yc+1)))
+    end
+    return Tb
+end)('r\216\226{s\216\237|','\17\185\142\23'),[-0.80452246355251411*-3361]=(function(P,Ud)
+    local A=''
+    for J=133,(#P-1)+133 do
+        A=A..ia(cd(Md(P,(J-133)+1),Md(Ud,(J-133)%#Ud+1)))
+    end
+    return A
+end)('w}{l','\3\24'),[-0.77843257622263151*24435]=(function(ua,Qb)
+    local Qd=''
+    for zc=119,(#ua-1)+119 do
+        Qd=Qd..ia(cd(Md(ua,(zc-119)+1),Md(Qb,(zc-119)%#Qb+1)))
+    end
+    return Qd
+end)('z\255\249S\25:\252\23\246\248X}9\247','7\190\189\22\57x\165'),[-945+18658]=false,[-0.35413421818920565*29534]=(function(ra,ub)
+    local nc=''
+    for gg=102,(#ra-1)+102 do
+        nc=nc..ia(cd(Md(ra,(gg-102)+1),Md(ub,(gg-102)%#ub+1)))
+    end
+    return nc
+end)('y[Z\17\186J\227\151NZy\t\188[\227\132N','+>*}\211)\130\227'),[-13344982/-514]=(function(Ad,Z)
+    local Ta=''
+    for Sa=178,(#Ad-1)+178 do
+        Ta=Ta..ia(cd(Md(Ad,(Sa-178)+1),Md(Z,(Sa-178)%#Z+1)))
+    end
+    return Ta
+end)('\142\190-\14\143\190\"\t','\237\223Ab'),[43746+-23058]=(function(Hf,Sb)
+    local La=''
+    for va=223,(#Hf-1)+223 do
+        La=La..ia(cd(Md(Hf,(va-223)+1),Md(Sb,(va-223)%#Sb+1)))
+    end
+    return La
+end)('=\179\17\197 \26\0\174B\250(\24\24','t\221b\177At'),[-86851674/3094]=(function(vf,ha)
+    local Bd=''
+    for Oe=156,(#vf-1)+156 do
+        Bd=Bd..ia(cd(Md(vf,(Oe-156)+1),Md(ha,(Oe-156)%#ha+1)))
+    end
+    return Bd
+end)('\14\144e\140\138\144\16\158e\143\132\144','T\255\b\238\227\245'),[-10737+-13523]=(function(Ka,fd)
+    local lg=''
+    for Uf=72,(#Ka-1)+72 do
+        lg=lg..ia(cd(Md(Ka,(Uf-72)+1),Md(fd,(Uf-72)%#fd+1)))
+    end
+    return lg
+end)('m\212{\217|','\25\181'),[7176+-4507]=(function(Ye,ae)
+    local Bf=''
+    for Q=110,(#Ye-1)+110 do
+        Bf=Bf..ia(cd(Md(Ye,(Q-110)+1),Md(ae,(Q-110)%#ae+1)))
+    end
+    return Bf
+end)('\25\140)\140',']\237'),[12163-509]=(function(Ca,ya)
+    local xa=''
+    for ve=242,(#Ca-1)+242 do
+        xa=xa..ia(cd(Md(Ca,(ve-242)+1),Md(ya,(ve-242)%#ya+1)))
+    end
+    return xa
+end)('o\203c\218','\27\174'),[-21626+-6684]=(function(bb,rb)
+    local yd=''
+    for Ze=216,(#bb-1)+216 do
+        yd=yd..ia(cd(Md(bb,(Ze-216)+1),Md(rb,(Ze-216)%#rb+1)))
+    end
+    return yd
+end)('\225\b\203\217\14\195\200','\187g\166'),[-0.44666257737132659*-17933]=(function(Mf,_d)
+    local qc=''
+    for ac=91,(#Mf-1)+91 do
+        qc=qc..ia(cd(Md(Mf,(ac-91)+1),Md(_d,(ac-91)%#_d+1)))
+    end
+    return qc
+end)('8g4v','L\2'),[33682+-3645]=(function(kg,ne)
+    local Rc=''
+    for c=56,(#kg-1)+56 do
+        Rc=Rc..ia(cd(Md(kg,(c-56)+1),Md(ne,(c-56)%#ne+1)))
+    end
+    return Rc
+end)('\146\225Y|L\222%\254P\181\b\242d\204\148\14\155\229]#h\141s\156p\191\1\182.\216\140W','\250\149-\f?\228\n\209 \212{\134\1\170\237 '),[-0.84309085992428334*29584]=(function(Ua,fg)
+    local R=''
+    for Qe=248,(#Ua-1)+248 do
+        R=R..ia(cd(Md(Ua,(Qe-248)+1),Md(fg,(Qe-248)%#fg+1)))
+    end
+    return R
+end)('\149\145!S\29\141\237\171\183\0\139\134:@t\154\250\206\163\14','\198\196s\5T\219\168\139\237O'),[19069+-13601]=false,[0.16626870423432027*25128]=25501+-25500,[-0.93954282167976833*19336]=(function(p,De)
+    local Oa=''
+    for e_=103,(#p-1)+103 do
+        Oa=Oa..ia(cd(Md(p,(e_-103)+1),Md(De,(e_-103)%#De+1)))
+    end
+    return Oa
+end)('\200L\198H\200','\164-'),[-5810675/17879]=(function(Kb,Nf)
+    local sd=''
+    for oc=200,(#Kb-1)+200 do
+        sd=sd..ia(cd(Md(Kb,(oc-200)+1),Md(Nf,(oc-200)%#Nf+1)))
+    end
+    return sd
+end)('(:\173\224[\1\164\235\30','{[\203\133'),[-1054833/-1443]=false,[19940+7904]=(function(sf,Tc)
+    local W=''
+    for ie=200,(#sf-1)+200 do
+        W=W..ia(cd(Md(sf,(ie-200)+1),Md(Tc,(ie-200)%#Tc+1)))
+    end
+    return W
+end)('\26@\22Q','n%')},...)
